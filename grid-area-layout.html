@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header, .nav, .main, .sideber, .advertise, .footer{
+            background-color: rgb(213, 201, 91);
+            border: 3px solid tomato;
+            padding: 10px;
+            border-radius: 10px;
+        }
+      .header{
+        grid-area: header;
+      }
+      .nav{
+        grid-area: nav;
+      }
+      .main{
+        grid-area: main;
+      }
+      .sideber{
+        grid-area: sideber;
+      }
+      .advertise{
+        grid-area: advertise;
+      }
+      .footer{
+       grid-area: footer;
+      }
+      .container{
+        display: grid;
+        gap: 20px;
+        grid-template-areas: 
+        "header  header  header  header"
+         "nav     main   main    sideber"
+         "nav     main   main    advertise"
+         "footer  footer footer  footer";
+      }
+      @media screen and (max-width: 576px) {
+        .container{
+            grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "sideber"
+            "advertise"
+            "footer";
+        }
+      }
+
+      @media screen and (min-width: 576px) and (max-width: 992px) {
+         .container{
+        grid-template-areas: 
+            "header header header"
+            "nav    nav    nav "
+            "sideber  main main"
+            "advertise footer footer"
+            
+        } 
+        
+      }
+    </style>
+
+</head>
+<body class="container">
+    <header class="header">
+        <h3>The header</h3>
+    </header>
+    <nav class="nav">
+       <a href="">
+        <li>nav-1</li>
+       </a><a href="">
+        <li>nav-2</li>
+       </a><a href="">
+        <li>nav-3</li>
+       </a>
+    </nav>
+    <main class="main">
+        <article>
+            <h3>Main Article</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, nemo quisquam. Incidunt natus cum ratione ipsum? Veniam dolorem obcaecati, repudiandae ratione fugiat voluptates assumenda veritatis consequuntur, autem id, dolores iusto.</p>
+        </article>
+        <article>
+            <h3>Main Article</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, nemo quisquam. Incidunt natus cum ratione ipsum? Veniam dolorem obcaecati, repudiandae ratione fugiat voluptates assumenda veritatis consequuntur, autem id, dolores iusto.</p>
+        </article>
+    </main>
+    <aside>
+        <div class="sideber">
+            <h4>Sideber</h4>
+        </div><br><br><br>
+        <div class="advertise">
+           <h4> Advertise</h4>
+        </div>
+    </aside>
+    <footer class="footer">
+       <h3>The footer</h3>
+    </footer>
+</body>
+</html>
